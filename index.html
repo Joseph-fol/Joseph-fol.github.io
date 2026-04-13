@@ -991,19 +991,19 @@
                 
                 <!-- Company Info -->
                 <div class="space-y-4">
-                    <h2 class="text-2xl font-bold text-white">BrandName</h2>
-                    <p class="text-gray-400">Creating amazing digital experiences since 2020. We specialize in web solutions that drive results.</p>
+                    <h2 class="text-2xl font-bold text-white">Fola</h2>
+                    <p class="text-gray-400">I build responsive, high-performing websites and design visually engaging graphics that elevate brands. My work blends clean code, smart UI/UX thinking, and strong visual storytelling helping businesses stand out and connect with their audience.</p>
                     <div class="flex space-x-4 pt-2">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <a href="https://www.facebook.com/folasakin.olawoyin/" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-facebook-f text-xl"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-twitter text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <a href="https://www.instagram.com/joseph.olawoyin" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <a href="https://www.linkedin.com/in/olawoyin-joseph-041127258/" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
                     </div>
@@ -1057,7 +1057,7 @@
             <div class="container mx-auto px-4 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="mb-4 md:mb-0">
-                        <p>&copy; 2023 Fola. All rights reserved.</p>
+                        <p>&copy; <span id="year"></span> Fola. All rights reserved.</p>
                     </div>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Privacy Policy</a>
@@ -1105,6 +1105,10 @@
             evt.currentTarget.classList.add("border-purple-700", "text-purple-700");
             evt.currentTarget.classList.remove("border-transparent", "text-gray-500");
         }
+        const year = document.getElementById("year")
+        const date = new Date
+        const thisYear = date.getFullYear()
+        year.innerHTML = thisYear
     </script>
 </body>
 
