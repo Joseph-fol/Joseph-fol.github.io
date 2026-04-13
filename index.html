@@ -6,11 +6,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.0/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.0/dist/flowbite.min.js"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        /* Additional custom animations */
+        [data-aos="flip-left"] {
+            opacity: 0;
+            transform: perspective(1200px) rotateY(90deg);
+        }
+        [data-aos="flip-left"].aos-animate {
+            animation: flip-left-animation 0.7s ease-in-out forwards;
+        }
+
+        @keyframes flip-left-animation {
+            to {
+                opacity: 1;
+                transform: perspective(1200px) rotateY(0);
+            }
+        }
+    </style>
     <title>Home | Fola </title>
 </head>
 <body>
     <!-- bg-white/70 border-gray-200 -->
-    <nav class=" py-6 dark:bg-gray-900 fixed :fixed md:fixed backdrop-blur-xs left-0 right-0 z-1000">
+    <nav class=" py-6 dark:bg-gray-900 sticky lg:fixed md:fixed backdrop-blur-xs left-0 right-0 z-1000">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <a href="#" class="flex items-center">
             <!-- <img src="https://www.svgrepo.com/show/499962/music.svg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo"> -->
@@ -75,17 +95,17 @@
 <!-- bg-gradient-to-r from-purple-100 -->
 <section class=" pt-30 xl:pt-10 md:pt-30 md:ps-8 md:pe-8 overflow-hidden to-gray-100 lg:grid lg:min-h-screen lg:place-content-center" id="home">
   <div class="mx-auto w-screen max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
-    <div class="max-w-prose text-left">
-        <h2 class="text-lg font-bold">Hi I'm Olawoyin Joseph</h2>
-      <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black" >
+    <div class="max-w-prose text-left" data-aos="fade-up">
+        <h2 class="text-lg font-bold" data-aos="fade-right" data-aos-delay="200">Hi I'm Olawoyin Joseph</h2>
+      <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black" data-aos="fade-up" data-aos-delay="400">
         Full-Stack Web Developer & <strong class="text-purple-900"> Creative Graphics Designer </strong>
       </h1>
 
-      <p class="mt-4  text-pretty text-justify text-gray-700 sm:text-lg/relaxed dark:text-black">
+      <p class="mt-4  text-pretty text-justify text-gray-700 sm:text-lg/relaxed dark:text-black" data-aos="fade-up" data-aos-delay="500">
         I build responsive, high-performing websites and design visually engaging graphics that elevate brands. My work blends clean code, smart UI/UX thinking, and strong visual storytelling helping businesses stand out and connect with their audience.
       </p>
 
-      <div class="mt-4 flex gap-4 sm:mt-6">
+      <div class="mt-4 flex gap-4 sm:mt-6" data-aos="fade-up" data-aos-delay="600">
         <a class="inline-block rounded border border-purple-600 transition bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm bg-purple-900 hover:bg-purple-700" target="_blank" href="https://github.com/Joseph-fol?tab=repositories"> View on Project  </a>
 
         <a
@@ -98,7 +118,7 @@
     </div>
 
    <!-- Responsive Image -->
-    <div class="mt-6 md:mt-0 sm:p-10">
+    <div class="mt-6 md:mt-0 sm:p-10" data-aos="zoom-in" data-aos-delay="600">
       <img 
         class="w-full h-auto max-w-full rounded-lg object-cover md:h-[600px] lg:h-[500px]" 
         src="./Images/my-image.png" 
@@ -111,7 +131,7 @@
 
 <section class="md:ps-5 md:pe-5 overflow-hidden lg:mb-10" id="about">
     <div class="mx-auto mt-40 sm:flex items-center max-w-screen-xl">
-        <div class="sm:w-1/2 p-5">
+        <div class="sm:w-1/2 p-5" data-aos="fade-right">
             <div class="text">
                 <span class="border-purple-700 text-2xl font-bold text-purple-700 uppercase">ABOUT US</span>
                 <h2 class="my-4 font-bold text-2xl xl:text-4xl g:text-4xl md:text-2xl sm:text-4xl">Crafting Digital Experiences <br>  <span class="text-purple-10000">with Design & Technology</span>
@@ -124,7 +144,7 @@
             </div>
         </div>
 
-        <div class="sm:w-1/2 p-5 lg:ms-40">
+        <div class="sm:w-1/2 p-5 lg:ms-40" data-aos="fade-left" data-aos-delay="200">
 
             <div class="text">
                 <span class="border-purple-700 text-2xl font-bold text-purple-700 uppercase">Connect With Us</span>
@@ -172,8 +192,8 @@
       <section class="py-20 pt-10" id="services">
                 <div class="container mx-auto px-4">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                        
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <NuxtLink to="/" class="relative group">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="flip-left">
+                            <div class="relative group">
                                 <img src="https://i.pinimg.com/736x/39/1e/11/391e11fcd3561b9346a3a548807a081a.jpg" alt="Lorem Ipsum"
                                     class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div
@@ -186,7 +206,7 @@
                                             clip-rule="evenodd" transform="rotate(-45 10 10)" />
                                     </svg>
                                 </div>
-                            </NuxtLink>
+                            </div>
 
                             <div class="py-16 px-6 text-left">
                                 <h3 class="text-xl text-left font-bold text-gray-800 mb-2">Graphic Designing</h3>
@@ -203,8 +223,8 @@
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <NuxtLink to="/" class="relative group">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="flip-left" data-aos-delay="200">
+                            <div class="relative group">
                                 <img src="https://i.pinimg.com/736x/8b/ef/ec/8befec4803484e7d2636eb57d5ee3872.jpg" alt="Web developer" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                                 <div
                                     class="absolute top-3 right-3 w-8 h-8 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -215,7 +235,7 @@
                                             clip-rule="evenodd" transform="rotate(-45 10 10)" />
                                     </svg>
                                 </div>
-                            </NuxtLink>
+                            </div>
 
                             <div class="py-16 px-6 text-left">
                                 <h3 class="text-xl text-left font-bold text-gray-800 mb-2">Website Developement</h3>
@@ -232,8 +252,8 @@
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <NuxtLink to="" class="relative group">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="flip-left" data-aos-delay="400">
+                            <div class="relative group">
                                 <img src="https://i.pinimg.com/736x/b2/59/ca/b259ca3111468b3fb3119afcd81d2c04.jpg" alt="Software Engineering"
                                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
 
@@ -246,7 +266,7 @@
                                             clip-rule="evenodd" transform="rotate(-45 10 10)" />
                                     </svg>
                                 </div>
-                            </NuxtLink>
+                            </div>
 
                             <div class="py-16 px-6 text-left">
                                 <h3 class="text-xl text-left font-medium text-gray-800 mb-2">Software Engineering</h3>
@@ -269,26 +289,41 @@
 </section>
 
 <section class="xl:ps-23 xl:pe-23 bg-[rgb(248,249,255)]" id="portfolio">
-    <div class="mx-auto  text-center items-center max-w-screen py-20">
+    <div class="mx-auto  text-center items-center max-w-screen py-20" data-aos="fade-up">
             <div class="text">
-                <span class="border-purple-700 text-2xl font-bold text-purple-700">Creative Portofolio</span>
+                <span class="border-purple-700 text-2xl font-bold text-purple-700">Creative Portfolio</span>
                 <h2 class="my-4 text-[#221531] font-bold text-4xl xl:text-6xl lg:text-5xl g:text-4xl md:text-2xl ">Recent Works </h2>
                 <p class="text-gray-500 font-medium text-[20px]">
                     There are many variations of passages of projects available but <br> the majority have suffered alteration in some form.
                 </p>
             </div>
 
-            <div class="flex mx-auto mt-7 flex-wrap max-w w-full p-2 gap-4 md:gap-2 justify-center items-center text-sm text-white md:text-md">
-                <a href="#" class="bg-purple-700 text-center rounded-full px-5 py-2 text-white text-lg"> All </a>
-                <a href="#" class="bg-none rounded-full px-4 py-1 text-gray-500 text-center text-lg hover:bg-purple-700 hover:text-white"> Web Design </a>
-                <a href="#" class="bg-none rounded-full px-2 py-1 text-gray-500 text-center text-lg hover:bg-purple-700 hover:text-white"> Content Creation </a>
-                <a href="#" class="bg-none rounded-full  px-2 py-1 text-gray-500 text-center text-lg hover:bg-purple-700 hover:text-white"> Software Innovation </a>
+            <!-- Tab Navigation -->
+            <div class="border-b border-gray-300 mt-7">
+                <ul class="flex flex-wrap p-5 text-sm font-medium text-center">
+                    <li class="me-2">
+                        <button onclick="openPortfolioTab(event, 'software')" class="portfolio-tab-btn inline-block p-4 border-b-2 border-purple-700 text-[16px] text-purple-700 rounded-t-lg transition-all duration-300">
+                            Software Development
+                        </button>
+                    </li>
+                    <li class="me-2">
+                        <button onclick="openPortfolioTab(event, 'design')" class="portfolio-tab-btn inline-block p-4 border-b-2 border-transparent text-[16px] text-gray-500 hover:text-gray-700 rounded-t-lg transition-all duration-300">
+                            Graphics Design
+                        </button>
+                    </li>
+                    <li class="me-2">
+                        <button onclick="openPortfolioTab(event, 'innovation')" class="portfolio-tab-btn inline-block p-4 border-b-2 border-transparent text-[16px] text-gray-500 hover:text-gray-700 rounded-t-lg transition-all duration-300">
+                            Software Innovation
+                        </button>
+                    </li>
+                </ul>
             </div>
 
-
+        <!-- Tab 1: Software Development -->
+        <div id="software" class="portfolio-tabcontent block">
         <div class="flex flex-wrap gap-10 px-5 my-10 justify-center items-center lg:px-10 lg:flex md:px-5 md:flex-wrap sm:flex-nowrap">
 
-            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full">
+            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full" data-aos="zoom-up">
                 <a href="https://excellence-academy-five.vercel.app/" target="_blank"><img src="./Images/excellence.png" alt="Mountain" class="w-full h-80 object-cover rounded transition-transform duration-500 group-hover:scale-105"></a>
 
                 <div class="py-6 bg-[#f8f9ff]" >
@@ -300,7 +335,7 @@
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full">
+            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full" data-aos="zoom-up" data-aos-delay="200">
                 <a href="https://food-u.vercel.app/" target="_blank"><img src="./Images/Food-U.png" alt="Food-U" class="w-full h-80 object-cover rounded transition-transform duration-300 group-hover:scale-105"></a>
                 <div class="py-6 bg-[#f8f9ff]" >
                     <a href="https://food-u.vercel.app/" target="_blank"><h2 class="text-2xl font-bold text-gray-800 mb-2 text-left hover:text-purple-700">Food-U Landing Page</h2></a>
@@ -311,7 +346,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full ">
+            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full " data-aos="zoom-up" data-aos-delay="400">
                 <a href="https://mixusbeatz.vercel.app/" target="_blank" ><img src="./Images/MixuxBeatx.png" alt="mixusbeatz" class="w-full h-80 object-cover rounded"></a>
 
                 <div class="py-6 bg-[#f8f9ff]" >
@@ -323,7 +358,7 @@
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full">
+            <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full" data-aos="zoom-up" data-aos-delay="600">
                 <a href="https://schedule-planner-xi.vercel.app/" target="_blank"><img src="./Images/schedule-planner.png" alt="schedule-planner" class="w-full h-80 object-cover rounded transition-transform duration-500 group-hover:scale-105"></a>
 
                 <div class="py-6 bg-[#f8f9ff]" >
@@ -335,24 +370,125 @@
                 </div>
             </div>
         </div>
+        </div>
+        <!-- End Software Development Tab -->
+
+        <!-- Tab 2: Graphics Design -->
+        <div id="design" class="portfolio-tabcontent hidden">
+            <div class="flex flex-wrap gap-10 px-5 my-10 justify-center items-center lg:px-10 md:px-5 md:flex-wrap">
+                <!-- Graphics Design Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop" alt="Brand Identity Design" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Brand Identity Design</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Complete brand identity package including logo design, color palette, typography guidelines, and brand guidelines document. Perfect for startups and established businesses looking to refresh their visual identity.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+
+                <!-- Graphics Design Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="Social Media Content" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Social Media Content</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Eye-catching social media posts, stories, and banners optimized for all platforms. From Instagram graphics to LinkedIn content, I create visually stunning designs that boost engagement and brand awareness.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+
+                <!-- Graphics Design Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop" alt="Print Design" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Print & Marketing Materials</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Professional print designs including business cards, brochures, flyers, and packaging. I ensure your brand message is clearly communicated through beautifully designed marketing collaterals.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+
+                <!-- Graphics Design Card 4 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop" alt="UI/UX Design" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">UI/UX Design</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            User-centered interface designs for websites and applications. I create intuitive, visually appealing designs that enhance user experience and drive conversions while maintaining brand consistency.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Graphics Design Tab -->
+
+        <!-- Tab 3: Software Innovation -->
+        <div id="innovation" class="portfolio-tabcontent hidden">
+            <div class="flex flex-wrap gap-10 px-5 my-10 justify-center items-center lg:px-10 md:px-5 md:flex-wrap">
+                <!-- Innovation Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop" alt="AI-Powered Analytics Platform" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">AI-Powered Analytics Platform</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Advanced analytics dashboard leveraging machine learning to provide real-time insights. Features predictive analysis, automated reporting, and customizable dashboards for data-driven decision making.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+
+                <!-- Innovation Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="Blockchain Integration" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Blockchain Integration Solution</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Innovative blockchain-based solutions for secure transactions and data verification. Integrates smart contracts, cryptocurrency payments, and distributed ledger technology for enhanced security.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+
+                <!-- Innovation Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop" alt="IoT Smart Systems" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">IoT Smart Systems</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Connected IoT solutions for home automation, industrial monitoring, and smart city applications. Real-time data collection, cloud integration, and mobile control for modern connected ecosystems.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+
+                <!-- Innovation Project 4 -->
+                <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8a0c9?w=500&h=300&fit=crop" alt="AR/VR Experience" class="w-full h-64 object-cover">
+                    <div class="py-6 bg-white px-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">AR/VR Experience Platform</h2>
+                        <p class="text-gray-700 leading-7 mb-4 text-justify">
+                            Immersive augmented and virtual reality experiences for training, education, and entertainment. Interactive 3D environments, gesture recognition, and cross-platform compatibility for next-gen applications.
+                        </p>
+                        <button class="font-bold text-white px-10 rounded-2xl py-3 bg-purple-700 hover:bg-purple-800 transition-colors">Interested</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Software Innovation Tab -->
     </div>
 </section>
 
 <section class="overflow-hidden bg-[#221531] md:px-5" id="services">
     <div class="xl:px-18  lg:py-10 md:py-20 ">
             <div class="text-center">
-                <p class="text-3xl text-white pt-7 px-7 font-bold lg:text-[30px] md:text-3xl">
-                    Some of Our Happy Clients
-                </p>
+                <p class="text-3xl text-white pt-7 px-7 font-bold"> Some of Our Happy Clients </p>
                 <p class="text-white px-7 lg:text-lg mt-4 ">There are many variations of passages of Lorem Ipsum available <br> but the majority have suffered alteration in some form. </p>   
             </div>
-    </div>
-    
-    <div class="flex mx-auto mt-7 flex-wrap max-w w-full p-2 gap-4 md:gap-2 justify-center items-center text-sm text-white md:text-md">
-        <img src="https://uideck.com/" alt="">        
-        <img src="" alt="">        
-        <img src="" alt="">        
-        <img src="" alt="">        
     </div>
     
     <section>
@@ -362,7 +498,7 @@
             <!-- Component -->
             <div class="bg-blue-50 p-8 text-center sm:p-10 md:p-16">
             <!-- Title -->
-            <h2 class="mb-5 text-3xl font-bold md:text-5xl lg:text-lg">Want to work together and create <br> amazing products</h2>
+            <h2 class="mb-5 text-3xl font-bold md:text-3xl lg:text-lg">Want to work together and create <br> amazing products</h2>
             
             <!-- Form -->
             <form name="email-form" method="get" class="relative mx-auto mb-4 mt-20 flex w-full max-w-lg flex-col items-start justify-center sm:flex-row">
@@ -379,7 +515,7 @@
 <section class="bg-white" id="pricing">
     <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
 
-        <div class="text-center my-8 lg:mb-16">
+        <div class="text-center my-8 lg:mb-16" data-aos="fade-up">
             <div class="absolute left-0 hidden lg:block lg:mt-20">
             </div>
 
@@ -392,7 +528,7 @@
 
         <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
             <!-- Personal -->
-            <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white" data-aos="zoom-in">
                 <h3 class="mb-4 text-2xl text-left font-semibold text-purple-700">Personal</h3>
                 
                 <div class="flex items-baseline justify-left my-8">
@@ -462,7 +598,7 @@
             </div>
 
             <!-- Company -->
-             <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+             <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white" data-aos="zoom-in" data-aos-delay="200">
                 <h3 class="mb-4 text-2xl text-left font-semibold text-purple-700">Company</h3>
                 
                 <div class="flex items-baseline justify-left my-8">
@@ -532,7 +668,7 @@
             </div>
             
             <!-- Enterprise -->
-            <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white" data-aos="zoom-in" data-aos-delay="400">
                 <h3 class="mb-4 text-2xl text-left font-semibold text-purple-700">Enterprise</h3>
                 
                 <div class="flex items-baseline justify-left my-8">
@@ -617,11 +753,11 @@
 
 
     <div class="container p-6 mx-auto mb-10 xl:px-0">
-        <div class="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
-            <div class="lg:col-span-2 xl:col-auto">
+        <div class="grid gap-10 lg:grid-cols-2 xl:grid-cols-3" data-aos="fade-up">
+            <div class="lg:col-span-2 xl:col-auto" data-aos="fade-right" data-aos-delay="100">
                 <div class="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
 
-                    <p class="text-xl lg:text-xl md:text-xl leading-normal dark:text-gray-300">Working with this <mark class="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-white">developer</mark> was a seamless experience. They possess a rare ability to blend high-level graphic design with clean, functional code. They didn't just build a website; they created a visual identity and then brought it to life with technical precision. If you need someone who understands the user journey from both a visual and a functional perspective, look no further.</p>
+                    <p class="text-xl lg:text-[20px] md:text-xl leading-normal dark:text-gray-300">Working with this <mark class="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-white">developer</mark> was a seamless experience. They possess a rare ability to blend high-level graphic design with clean, functional code. They didn't just build a website; they created a visual identity and then brought it to life with technical precision. If you need someone who understands the user journey from both a visual and a functional perspective, look no further.</p>
                     <div class="flex items-center mt-8 space-x-3">
                         <div class="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
                             <img alt="Avatar" src="https://pngtree.com/so/profile-avatar" />
@@ -633,7 +769,7 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            <div class="" data-aos="fade-up" data-aos-delay="300">
                 <div class="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
                     <p class="text-xl leading-normal dark:text-gray-300">A brilliant creative mind with the <mark class="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-white">technical skills</mark> to match. They handled our branding and development with ease, ensuring a cohesive look across all platforms. Highly recommended for any business looking to elevate their digital presence.</p>
                     <div class="flex items-center mt-8 space-x-3">
@@ -647,7 +783,7 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            <div class="" data-aos="fade-left" data-aos-delay="500">
                 <div class="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
                     <p class="text-xl leading-normal dark:text-gray-300">Top-tier talent! It’s hard to <mark class="mx-1 text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-white">find</mark>  someone who is equally skilled in graphic design and web development. They were able to take my vague ideas and turn them into a stunning, responsive reality. The communication was excellent, the design was modern, and the backend was robust. A true professional who delivers high-quality work on time.</p>
                     <div class="flex items-center mt-8 space-x-3">
@@ -669,5 +805,40 @@
 
 
 <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+<!-- Initialize AOS - Animate On Scroll -->
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+</script>
+
+<!-- Portfolio Tab Function -->
+<script>
+function openPortfolioTab(evt, tabName) {
+    // Hide all tab contents
+    var tabcontents = document.getElementsByClassName("portfolio-tabcontent");
+    for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].classList.add("hidden");
+        tabcontents[i].classList.remove("block");
+    }
+    
+    // Remove active state from all buttons
+    var tabbtn = document.getElementsByClassName("portfolio-tab-btn");
+    for (var i = 0; i < tabbtn.length; i++) {
+        tabbtn[i].classList.remove("border-purple-700", "text-purple-700");
+        tabbtn[i].classList.add("border-transparent", "text-gray-500");
+    }
+    
+    // Show active tab and highlight button
+    document.getElementById(tabName).classList.remove("hidden");
+    document.getElementById(tabName).classList.add("block");
+    evt.currentTarget.classList.add("border-purple-700", "text-purple-700");
+    evt.currentTarget.classList.remove("border-transparent", "text-gray-500");
+}
+</script>
 </body>
 </html>
