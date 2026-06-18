@@ -42,7 +42,7 @@
         /* Gradient Animation for Header */
         .animate-gradient {
             background-size: 300%;
-            animation: animatedgradient 6s ease infinite alternate;
+            animation: animatedgradient 3s ease infinite alternate;
         }
 
         @keyframes animatedgradient {
@@ -68,7 +68,7 @@
             }
         }
         #typewriter-text.finished-typing::after {
-            content: ""; /* Stop showing cursor */
+            content: ""; 
         }
     </style>
     <title>Home | Fola </title>
@@ -148,7 +148,7 @@
         <div
             class="mx-auto w-full max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
             <div class="max-w-prose text-left" data-aos="fade-up">
-                <h2 class="text-lg font-bold" data-aos="fade-right" data-aos-delay="200">Hi I'm Olawoyin Joseph</h2>
+                <h2 class="text-lg font-bold animate-bounce" data-aos="fade-right" data-aos-delay="200">Hi I'm Olawoyin Joseph</h2>
                 <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black">
                     Full-Stack Web Developer & <strong id="typewriter-text" class="text-[#59168b]"></strong>
                 </h1>
@@ -1153,7 +1153,7 @@
         }
 
         // Wait for page load to start the effect
-        window.addEventListener('load', () => setTimeout(startTypewriter, 400));
+        window.addEventListener('load', () => setTimeout(startTypewriter, 100));
     </script>
 </body>
 
