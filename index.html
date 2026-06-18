@@ -38,6 +38,38 @@
                 transform: perspective(1200px) rotateY(0);
             }
         }
+
+        /* Gradient Animation for Header */
+        .animate-gradient {
+            background-size: 300%;
+            animation: animatedgradient 6s ease infinite alternate;
+        }
+
+        @keyframes animatedgradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Typewriter effect */
+        #typewriter-text::after {
+            content: '|';
+            color: #59168b;
+            font-weight: 400;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        #typewriter-text.finished-typing::after {
+            content: ""; /* Stop showing cursor */
+        }
     </style>
     <title>Home | Fola </title>
 </head>
@@ -111,16 +143,14 @@
     </nav>
 
     <!-- bg-gradient-to-r from-purple-100 -->
-    <section
-        class="relative bg-gradient-to-r from-purple-100 pt-30 xl:pt-10 md:pt-30 md:ps-8 md:pe-8 overflow-hidden to-gray-100 lg:grid lg:min-h-screen lg:place-content-center"
+    <section class="relative bg-gradient-to-r from-purple-100 via-indigo-100 to-gray-100 animate-gradient pt-30 xl:pt-10 md:pt-30 md:ps-8 md:pe-8 overflow-hidden lg:grid lg:min-h-screen lg:place-content-center"
         id="home">
         <div
             class="mx-auto w-full max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
             <div class="max-w-prose text-left" data-aos="fade-up">
                 <h2 class="text-lg font-bold" data-aos="fade-right" data-aos-delay="200">Hi I'm Olawoyin Joseph</h2>
-                <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black" data-aos="fade-up"
-                    data-aos-delay="400">
-                    Full-Stack Web Developer & <strong class="text-[#59168b]"> Creative Graphics Designer </strong>
+                <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black">
+                    Full-Stack Web Developer & <strong id="typewriter-text" class="text-[#59168b]"></strong>
                 </h1>
 
                 <p class="mt-4 text-md text-pretty text-justify text-gray-700 sm:text-lg/relaxed dark:text-black"
@@ -221,8 +251,8 @@
     </section>
 
     <section class="overflow-hidden bg-[#221531] md:px-5" id="services">
-        <div class="xl:px-5 pt-10 lg:py-2 md:py-20 sm:block flex flex-row ">
-            <div class="sm:w-1/2 p-5 bg-indigo-300" >
+        <div class="xl:px-5 pt-10 lg:py-2 md:py-20 flex flex-col sm:flex-row justify-between lg:items-center">
+            <div class="sm:w-1/2 p-5" >
                 <span class="border-purple-700 text-2xl font-bold text-purple-700 uppercase">What We Do</span>
                 <div class="text">
                     <p class="text-3xl text-white mt-4 font-bold lg:text-5xl md:text-3xl">
@@ -231,9 +261,9 @@
                 </div>
             </div>
 
-            <div class="sm:w-1/2 bg-red-200">
+            <div class="px-5">
                 <div class="">
-                    <a class="text-white lg:text-right sm:text-right md:text-right mt-4 underline pointer"
+                    <a class="text-white lg:text-right sm:text-right md:text-right mt-4 hover:no-underline underline pointer"
                         href="./services.html">
                         EXPLORE SERVICES </a>
                 </div>
@@ -1099,6 +1129,31 @@
         const year = document.getElementById("year")
         const date = new Date().getFullYear()
         year.innerHTML = date
+
+        // Typewriter effect
+        function startTypewriter() {
+            const typewriterElement = document.getElementById('typewriter-text');
+            if (typewriterElement) {
+                const textToType = "Creative Graphics Designer";
+                let i = 0;
+                typewriterElement.innerHTML = ""; // Clear initial text
+
+                function type() {
+                    if (i < textToType.length) {
+                        typewriterElement.innerHTML += textToType.charAt(i);
+                        i++;
+                        setTimeout(type, 100); // Typing speed in ms
+                    } else {
+                        // Typing finished, add class to stop blinking cursor
+                        typewriterElement.classList.add('finished-typing');
+                    }
+                }
+                type(); // Start typing
+            }
+        }
+
+        // Wait for page load to start the effect
+        window.addEventListener('load', () => setTimeout(startTypewriter, 400));
     </script>
 </body>
 
