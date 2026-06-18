@@ -145,8 +145,7 @@
     <!-- bg-gradient-to-r from-purple-100 -->
     <section class="relative bg-gradient-to-r from-purple-100 via-indigo-100 to-gray-100 animate-gradient pt-30 xl:pt-10 md:pt-30 md:ps-8 md:pe-8 overflow-hidden lg:grid lg:min-h-screen lg:place-content-center"
         id="home">
-        <div
-            class="mx-auto w-full max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
+        <div class="mx-auto w-full max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
             <div class="max-w-prose text-left" data-aos="fade-up">
                 <h2 class="text-lg font-bold animate-bounce" data-aos="fade-right" data-aos-delay="200">Hi I'm Olawoyin Joseph</h2>
                 <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black">
@@ -662,14 +661,14 @@
                         amazing products</h2>
 
                     <!-- Form -->
-                    <form name="email-form" method="get"
+                    <form name="email-form"  method="get"
                         class="relative mx-auto mb-4 mt-20 flex w-full max-w-lg flex-col items-start justify-center sm:flex-row">
                         <input type="email"
                             class="mb-3 sm:mr-6 block h-9 w-full bg-white px-6 py-7 border-0 rounded-full text-sm text-[#333333] focus:border-[#3898ec] placeholder:text-gray-500 "
-                            placeholder="Enter your email" required="" />
+                            placeholder="Enter your email" required="Input cannot be empty" />
 
-                        <input type="submit" value="Subscribe"
-                            class="inline-block w-24 cursor-pointer bg-[#221531] px-10 py-3 text-center font-semibold text-white transition [box-shadow:rgb(171,_196,_245)_-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px] sm:w-28" />
+                        <button type="submit"
+                            class="inline-block w-full cursor-pointer bg-[#221531] px-10 py-3 text-center font-semibold text-white transition [box-shadow:rgb(171,_196,_245)_-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px] sm:w-28"> Subscribe</button>
                     </form>
 
                 </div>
@@ -1062,7 +1061,7 @@
                         <li class="flex items-center">
                             <i class="fa-solid fa-comment-sms mr-3" style="color: rgb(116, 192, 252);"></i>
                             <!-- <i class="fas fa-phone mr-3 text-blue-400"></i> -->
-                            <a href="sms:08102758951?body=I%20would%20like%20more%20information">08102758951</a>
+                            <a href="sms:08102758951?body=Hello,%20my%20name%20is%20____________,  I'm%20interested%20in%20your%20service.%20Let%20us%20chat%20and%20hear%20more%20details%20from%20you.">08102758951</a>
                         </li>
 
                         <li class="flex items-center">
@@ -1138,11 +1137,13 @@
                 const textToType = "Creative Graphics Designer";
                 let i = 0;
                 typewriterElement.innerHTML = ""; // Clear initial text
-                console.log(textToType.charAt(i))
-
+                console.log(textToType.length);
+                
                 function type() {
                     if (i < textToType.length) {
                         typewriterElement.innerHTML += textToType.charAt(i);
+                        console.log(textToType.charAt(i));
+                        
                         i++;
                         setTimeout(type, 100); // Typing speed in ms
                     } else {
