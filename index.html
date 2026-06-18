@@ -9,8 +9,15 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.0/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
+        body {
+            font-family: "Outfit", sans-serif;
+        }
+
         /* Additional custom animations */
         [data-aos="flip-left"] {
             opacity: 0;
@@ -33,10 +40,9 @@
 
 <body>
     <!-- bg-white/70 border-gray-200 -->
-    <nav class=" py-6 dark:bg-gray-900 sticky lg:fixed md:fixed backdrop-blur-xs left-0 right-0 z-1000">
+    <nav class="py-6 dark:bg-gray-900 sticky lg:fixed md:fixed backdrop-blur-xs left-0 right-0 z-1000">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
             <a href="#" class="flex items-center">
-                <!-- <img src="https://www.svgrepo.com/show/499962/music.svg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo"> -->
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Fola</span>
             </a>
             <div class="flex items-center lg:order-2">
@@ -102,18 +108,18 @@
 
     <!-- bg-gradient-to-r from-purple-100 -->
     <section
-        class="bg-gradient-to-r from-purple-100 pt-30 xl:pt-10 md:pt-30 md:ps-8 md:pe-8 overflow-hidden to-gray-100 lg:grid lg:min-h-screen lg:place-content-center"
+        class="relative bg-gradient-to-r from-purple-100 pt-30 xl:pt-10 md:pt-30 md:ps-8 md:pe-8 overflow-hidden to-gray-100 lg:grid lg:min-h-screen lg:place-content-center"
         id="home">
         <div
-            class="mx-auto w-screen max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
+            class="mx-auto w-full max-w-screen-xl px-4 py-2 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-10">
             <div class="max-w-prose text-left" data-aos="fade-up">
                 <h2 class="text-lg font-bold" data-aos="fade-right" data-aos-delay="200">Hi I'm Olawoyin Joseph</h2>
                 <h1 class="lg:text-6xl font-bold text-gray-900 text-3xl md:text-2xl dark:text-black" data-aos="fade-up"
                     data-aos-delay="400">
-                    Full-Stack Web Developer & <strong class="text-purple-900"> Creative Graphics Designer </strong>
+                    Full-Stack Web Developer & <strong class="text-[#59168b]"> Creative Graphics Designer </strong>
                 </h1>
 
-                <p class="mt-4  text-pretty text-justify text-gray-700 sm:text-lg/relaxed dark:text-black"
+                <p class="mt-4 text-md text-pretty text-justify text-gray-700 sm:text-lg/relaxed dark:text-black"
                     data-aos="fade-up" data-aos-delay="500">
                     I build responsive, high-performing websites and design visually engaging graphics that elevate
                     brands. My work blends clean code, smart UI/UX thinking, and strong visual storytelling helping
@@ -121,10 +127,10 @@
                 </p>
 
                 <div class="mt-4 flex gap-4 sm:mt-6" data-aos="fade-up" data-aos-delay="600">
-                    <a class="inline-block rounded border border-purple-600 transition bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm bg-purple-900 hover:bg-purple-700"
+                    <a class="inline-block rounded border border-purple-600 transition bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm bg-purple-900 hover:bg-purple-700 duration-600 hover:scale-y-110"
                         target="_blank" href="https://github.com/Joseph-fol?tab=repositories"> View on Project </a>
 
-                    <a class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-black shadow-sm transition transition-colors hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
+                    <a class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-black shadow-sm transition transition-colors hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 dark:hover:text-white duration-600 hover:scale-y-110"
                         href="https://drive.google.com/file/d/15AE551IJ4GAiEDOP3Yt19NPEffdZetD1/view?usp=drive_link"
                         target="_blank">
                         View My CV
@@ -134,16 +140,31 @@
 
             <!-- Responsive Image -->
             <div class="mt-6 md:mt-0 sm:p-10" data-aos="zoom-in" data-aos-delay="600">
-                <img class="w-full h-auto max-w-full rounded-lg object-cover md:h-[600px] lg:h-[500px]"
-                    src="./Images/my-image.png" alt="Any Image Here" />
+                <div class="relative w-full">
+                    <img class="w-full h-auto max-w-full rounded-lg object-cover md:h-[600px] lg:h-[500px]"
+                        src="./Images/my-image.png" alt="my image" />
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/60 to-transparent rounded-b-lg pointer-events-none">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Bottom vector waves -->
+        <!-- <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl overflow-hidden leading-none pointer-events-none z-0 pt-5">
+            <svg class="relative block w-full h-[150px] md:h-[250px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#e9d5ff" fill-opacity="0.5" d="M0,192L48,197.3C96,203,192,213,288,202.7C384,192,480,160,576,149.3C672,139,768,149,864,165.3C960,181,1056,203,1152,192C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                <path fill="#d8b4fe" fill-opacity="0.6" d="M0,256L60,240C120,224,240,192,360,192C480,192,600,224,720,229.3C840,235,960,213,1080,186.7C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                <path fill="#a855f7" fill-opacity="0.3" d="M0,128L80,154.7C160,181,320,235,480,245.3C640,256,800,224,960,192C1120,160,1280,128,1360,112L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+        </div> -->
     </section>
 
 
+    <!-- bg-gradient-to-r from-purple-100 -->
     <section class="md:ps-5 md:pe-5 overflow-hidden lg:mb-10" id="about">
-        <div class="mx-auto mt-40 sm:flex items-center max-w-screen-xl">
-            <div class="sm:w-1/2 p-5" data-aos="fade-right">
+        <div class="mx-auto mt-40 sm:flex items-center max-w-screen-xl lg:gap-20">
+            <div class="sm:flex-1 p-5" data-aos="fade-right">
                 <div class="text">
                     <span class="border-purple-700 text-2xl font-bold text-purple-700 uppercase">ABOUT US</span>
                     <h2 class="my-4 font-bold text-2xl xl:text-4xl g:text-4xl md:text-2xl sm:text-4xl">Crafting Digital
@@ -163,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="sm:w-1/2 p-5 lg:ms-40" data-aos="fade-left" data-aos-delay="200">
+            <div class="sm:flex-1 p-5" data-aos="fade-left" data-aos-delay="200">
                 <div class="text">
                     <span class="border-purple-700 text-2xl font-bold text-purple-700 uppercase">Connect With Us</span>
                     <p class="text-gray-700 mt-4 leading-7">
@@ -176,9 +197,7 @@
                             class="hover:scale-110 transition-transform duration-200 text-gray-400 hover:text-indigo-600 transition duration-300">
                             <i class="fab fa-facebook-f text-xl"></i>
                         </a>
-                        <!-- <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a> -->
+
                         <a href="https://www.instagram.com/joseph.olawoyin"
                             class="hover:scale-110 transition-transform duration-200 text-gray-400 hover:text-indigo-600 transition duration-300">
                             <i class="fab fa-instagram text-xl"></i>
@@ -330,7 +349,7 @@
     </section>
 
     <section class="xl:ps-23 xl:pe-23 bg-[rgb(248,249,255)]" id="portfolio">
-        <div class="mx-auto  text-center items-center max-w-screen py-20" data-aos="fade-up">
+        <div class="mx-auto text-center items-center max-w-full py-20" data-aos="fade-up">
             <div class="text">
                 <span class="border-purple-700 text-2xl font-bold text-purple-700">Creative Portfolio</span>
                 <h2 class="my-4 text-[#221531] font-bold text-4xl xl:text-6xl lg:text-5xl g:text-4xl md:text-2xl ">
@@ -368,7 +387,7 @@
             <!-- Tab 1: Software Development -->
             <div id="software" class="portfolio-tabcontent block">
                 <div
-                    class="flex flex-wrap gap-10 px-5 my-10 justify-center items-center lg:px-10 lg:flex md:px-5 md:flex-wrap sm:flex-nowrap">
+                    class="flex flex-wrap gap-10 px-5 my-10 justify-center items-center lg:px-10 lg:flex md:px-5 md:flex-wrap">
 
                     <div class="bg-white rounded-lg overflow-hidden max-w-lg w-full" data-aos="zoom-up">
                         <a href="https://excellence-academy-five.vercel.app/" target="_blank"><img
@@ -641,11 +660,11 @@
                     <form name="email-form" method="get"
                         class="relative mx-auto mb-4 mt-20 flex w-full max-w-lg flex-col items-start justify-center sm:flex-row">
                         <input type="email"
-                            class="mb-3 mr-6 block h-9 w-full bg-white px-6 py-7 border-0 rounded-full text-sm text-[#333333] focus:border-[#3898ec] placeholder:text-gray-500 "
+                            class="mb-3 sm:mr-6 block h-9 w-full bg-white px-6 py-7 border-0 rounded-full text-sm text-[#333333] focus:border-[#3898ec] placeholder:text-gray-500 "
                             placeholder="Enter your email" required="" />
 
                         <input type="submit" value="Subscribe"
-                            class="inline-block w-24 cursor-pointer bg-[#221531] px-10 pe-23 py-3 text-center font-semibold text-white transition [box-shadow:rgb(171,_196,_245)_-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px] sm:w-28" />
+                            class="inline-block w-24 cursor-pointer bg-[#221531] px-10 py-3 text-center font-semibold text-white transition [box-shadow:rgb(171,_196,_245)_-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px] sm:w-28" />
                     </form>
 
                 </div>
@@ -738,7 +757,7 @@
                         </li>
                     </ul>
                     <a href="#"
-                        class="text-white bg-[#221531] hover:bg-purple-900 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Get
+                        class="text-white bg-[#221531] hover:bg-purple-900 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm hover:animate-ping px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Get
                         started</a>
                 </div>
 
@@ -757,9 +776,8 @@
                     <hr class="mb-8 border-gray-200 dark:border-gray-600" />
 
 
-                    <ul role="list" class="mb-8 space-y-4 text-left">
+                    <ul role="list" class="mb-8 space-y-6 text-left">
                         <li class="flex items-center space-x-3">
-
                             <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -1074,7 +1092,7 @@
         AOS.init({
             duration: 1000,
             easing: 'ease-in-out',
-            once: true,
+            once: false,
             offset: 100
         });
     </script>
