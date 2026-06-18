@@ -1133,10 +1133,12 @@
         // Typewriter effect
         function startTypewriter() {
             const typewriterElement = document.getElementById('typewriter-text');
+
             if (typewriterElement) {
                 const textToType = "Creative Graphics Designer";
                 let i = 0;
                 typewriterElement.innerHTML = ""; // Clear initial text
+                console.log(textToType.charAt(i))
 
                 function type() {
                     if (i < textToType.length) {
@@ -1148,7 +1150,7 @@
                         typewriterElement.classList.add('finished-typing');
                     }
                 }
-                type(); // Start typing
+                type(); 
             }
         }
 
